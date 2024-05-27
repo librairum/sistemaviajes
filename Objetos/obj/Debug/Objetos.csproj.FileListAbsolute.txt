@@ -1,0 +1,42 @@
+C:\Users\Nonename.DESKTOP-L06N8E0\Documents\GitHub\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.AssemblyReference.cache
+C:\Users\Nonename.DESKTOP-L06N8E0\Documents\GitHub\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.CoreCompileInputs.cache
+C:\Users\Nonename.DESKTOP-L06N8E0\Documents\GitHub\SistemaViajesC\Objetos\bin\Debug\Objetos.dll
+C:\Users\Nonename.DESKTOP-L06N8E0\Documents\GitHub\SistemaViajesC\Objetos\bin\Debug\Objetos.pdb
+C:\Users\Nonename.DESKTOP-L06N8E0\Documents\GitHub\SistemaViajesC\Objetos\obj\Debug\Objetos.dll
+C:\Users\Nonename.DESKTOP-L06N8E0\Documents\GitHub\SistemaViajesC\Objetos\obj\Debug\Objetos.pdb
+D:\source visual 2022\repos\SistemaViajesC\Objetos\bin\Debug\Objetos.dll
+D:\source visual 2022\repos\SistemaViajesC\Objetos\bin\Debug\Objetos.pdb
+D:\source visual 2022\repos\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.AssemblyReference.cache
+D:\source visual 2022\repos\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.CoreCompileInputs.cache
+D:\source visual 2022\repos\SistemaViajesC\Objetos\obj\Debug\Objetos.dll
+D:\source visual 2022\repos\SistemaViajesC\Objetos\obj\Debug\Objetos.pdb
+C:\Users\CK\Desktop\SistemaViajesC#\Objetos\bin\Debug\Objetos.dll
+C:\Users\CK\Desktop\SistemaViajesC#\Objetos\bin\Debug\Objetos.pdb
+C:\Users\CK\Desktop\SistemaViajesC#\Objetos\obj\Debug\Objetos.csproj.AssemblyReference.cache
+C:\Users\CK\Desktop\SistemaViajesC#\Objetos\obj\Debug\Objetos.csproj.CoreCompileInputs.cache
+C:\Users\CK\Desktop\SistemaViajesC#\Objetos\obj\Debug\Objetos.dll
+C:\Users\CK\Desktop\SistemaViajesC#\Objetos\obj\Debug\Objetos.pdb
+C:\Users\jeffe\OneDrive\Documentos\Github Proyectos\SistemaViajesC\Objetos\bin\Debug\Objetos.dll
+C:\Users\jeffe\OneDrive\Documentos\Github Proyectos\SistemaViajesC\Objetos\bin\Debug\Objetos.pdb
+C:\Users\jeffe\OneDrive\Documentos\Github Proyectos\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.AssemblyReference.cache
+C:\Users\jeffe\OneDrive\Documentos\Github Proyectos\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.CoreCompileInputs.cache
+C:\Users\jeffe\OneDrive\Documentos\Github Proyectos\SistemaViajesC\Objetos\obj\Debug\Objetos.dll
+C:\Users\jeffe\OneDrive\Documentos\Github Proyectos\SistemaViajesC\Objetos\obj\Debug\Objetos.pdb
+C:\Users\campo\OneDrive\Documentos\Senati\Proyectos Empresa\SistemaViajesC\Objetos\bin\Debug\Objetos.dll
+C:\Users\campo\OneDrive\Documentos\Senati\Proyectos Empresa\SistemaViajesC\Objetos\bin\Debug\Objetos.pdb
+C:\Users\campo\OneDrive\Documentos\Senati\Proyectos Empresa\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.AssemblyReference.cache
+C:\Users\campo\OneDrive\Documentos\Senati\Proyectos Empresa\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.CoreCompileInputs.cache
+C:\Users\campo\OneDrive\Documentos\Senati\Proyectos Empresa\SistemaViajesC\Objetos\obj\Debug\Objetos.dll
+C:\Users\campo\OneDrive\Documentos\Senati\Proyectos Empresa\SistemaViajesC\Objetos\obj\Debug\Objetos.pdb
+C:\Users\campo\Documents\SENATI\EmpresaGM\SistemaViajesC\Objetos\bin\Debug\Objetos.dll
+C:\Users\campo\Documents\SENATI\EmpresaGM\SistemaViajesC\Objetos\bin\Debug\Objetos.pdb
+C:\Users\campo\Documents\SENATI\EmpresaGM\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.AssemblyReference.cache
+C:\Users\campo\Documents\SENATI\EmpresaGM\SistemaViajesC\Objetos\obj\Debug\Objetos.csproj.CoreCompileInputs.cache
+C:\Users\campo\Documents\SENATI\EmpresaGM\SistemaViajesC\Objetos\obj\Debug\Objetos.dll
+C:\Users\campo\Documents\SENATI\EmpresaGM\SistemaViajesC\Objetos\obj\Debug\Objetos.pdb
+C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\bin\Debug\Objetos.dll
+C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\bin\Debug\Objetos.pdb
+C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\obj\Debug\Objetos.csproj.AssemblyReference.cache
+C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\obj\Debug\Objetos.csproj.CoreCompileInputs.cache
+C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\obj\Debug\Objetos.dll
+C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\obj\Debug\Objetos.pdb
