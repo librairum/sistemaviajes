@@ -10,8 +10,10 @@ namespace Objetos
     {
         public int ID { get; set; }
 
-        public string cargo { get; set; }
+        public string nombrecargo { get; set; }
 
         public string descripcion { get; set; }
+
+        public ICollection<Empleado> empleados { get; set; }
     }
 }

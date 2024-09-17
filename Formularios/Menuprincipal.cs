@@ -22,6 +22,7 @@ namespace Formularios
         {
             InitializeComponent();
             this.usuario = usuario;
+            this.ShowIcon = false;
         }
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,18 +63,21 @@ namespace Formularios
         private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BuscarFactura buscarFactura = new BuscarFactura();
+            buscarFactura.ShowIcon = false;
             buscarFactura.Show();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TablaCliente TablaCliente = new TablaCliente();
+            TablaCliente.ShowIcon = false;
             TablaCliente.Show();
         }
 
         private void busesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TablaBuses tablaBuses = new TablaBuses();
+            tablaBuses.ShowIcon = false;
             tablaBuses.Show();
         }
 

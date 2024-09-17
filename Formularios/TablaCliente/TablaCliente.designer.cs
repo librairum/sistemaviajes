@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TablaCliente));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.txtapellido = new System.Windows.Forms.TextBox();
             this.txtnombre = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btneditar = new System.Windows.Forms.Button();
-            this.btnañadir = new System.Windows.Forms.Button();
+            this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
@@ -69,31 +69,31 @@
             this.txtrucB = new System.Windows.Forms.MaskedTextBox();
             this.txtdniB = new System.Windows.Forms.MaskedTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbTipoBusquedaEmpresa = new System.Windows.Forms.RadioButton();
+            this.rbTipoBusquedaPersona = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.LdniB = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtnombrecliente = new System.Windows.Forms.TextBox();
             this.btBuscar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDatos
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(318, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(781, 377);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvDatos.Location = new System.Drawing.Point(318, 60);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDatos.Size = new System.Drawing.Size(781, 377);
+            this.dgvDatos.TabIndex = 7;
+            this.dgvDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label11
             // 
@@ -313,7 +313,7 @@
             // btncancelar
             // 
             this.btncancelar.Image = ((System.Drawing.Image)(resources.GetObject("btncancelar.Image")));
-            this.btncancelar.Location = new System.Drawing.Point(160, 12);
+            this.btncancelar.Location = new System.Drawing.Point(164, 13);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(35, 34);
             this.btncancelar.TabIndex = 132;
@@ -323,7 +323,7 @@
             // btneliminar
             // 
             this.btneliminar.Image = ((System.Drawing.Image)(resources.GetObject("btneliminar.Image")));
-            this.btneliminar.Location = new System.Drawing.Point(124, 12);
+            this.btneliminar.Location = new System.Drawing.Point(87, 12);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(30, 33);
             this.btneliminar.TabIndex = 131;
@@ -340,20 +340,20 @@
             this.btneditar.UseVisualStyleBackColor = true;
             this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
-            // btnañadir
+            // btnnuevo
             // 
-            this.btnañadir.Image = ((System.Drawing.Image)(resources.GetObject("btnañadir.Image")));
-            this.btnañadir.Location = new System.Drawing.Point(12, 12);
-            this.btnañadir.Name = "btnañadir";
-            this.btnañadir.Size = new System.Drawing.Size(32, 33);
-            this.btnañadir.TabIndex = 129;
-            this.btnañadir.UseVisualStyleBackColor = true;
-            this.btnañadir.Click += new System.EventHandler(this.btnañadir_Click);
+            this.btnnuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnnuevo.Image")));
+            this.btnnuevo.Location = new System.Drawing.Point(12, 12);
+            this.btnnuevo.Name = "btnnuevo";
+            this.btnnuevo.Size = new System.Drawing.Size(32, 33);
+            this.btnnuevo.TabIndex = 129;
+            this.btnnuevo.UseVisualStyleBackColor = true;
+            this.btnnuevo.Click += new System.EventHandler(this.btnañadir_Click);
             // 
             // btnguardar
             // 
             this.btnguardar.Image = ((System.Drawing.Image)(resources.GetObject("btnguardar.Image")));
-            this.btnguardar.Location = new System.Drawing.Point(87, 12);
+            this.btnguardar.Location = new System.Drawing.Point(127, 13);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(31, 33);
             this.btnguardar.TabIndex = 128;
@@ -406,37 +406,37 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.radioButton2);
-            this.panel4.Controls.Add(this.radioButton1);
+            this.panel4.Controls.Add(this.rbTipoBusquedaEmpresa);
+            this.panel4.Controls.Add(this.rbTipoBusquedaPersona);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(13, 5);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(230, 38);
             this.panel4.TabIndex = 134;
             // 
-            // radioButton2
+            // rbTipoBusquedaEmpresa
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(131, 8);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(66, 17);
-            this.radioButton2.TabIndex = 60;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Empresa";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.rbTipoBusquedaEmpresa.AutoSize = true;
+            this.rbTipoBusquedaEmpresa.Location = new System.Drawing.Point(131, 8);
+            this.rbTipoBusquedaEmpresa.Name = "rbTipoBusquedaEmpresa";
+            this.rbTipoBusquedaEmpresa.Size = new System.Drawing.Size(66, 17);
+            this.rbTipoBusquedaEmpresa.TabIndex = 60;
+            this.rbTipoBusquedaEmpresa.TabStop = true;
+            this.rbTipoBusquedaEmpresa.Text = "Empresa";
+            this.rbTipoBusquedaEmpresa.UseVisualStyleBackColor = true;
+            this.rbTipoBusquedaEmpresa.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // rbTipoBusquedaPersona
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(61, 8);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(64, 17);
-            this.radioButton1.TabIndex = 59;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Persona";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.rbTipoBusquedaPersona.AutoSize = true;
+            this.rbTipoBusquedaPersona.Location = new System.Drawing.Point(61, 8);
+            this.rbTipoBusquedaPersona.Name = "rbTipoBusquedaPersona";
+            this.rbTipoBusquedaPersona.Size = new System.Drawing.Size(64, 17);
+            this.rbTipoBusquedaPersona.TabIndex = 59;
+            this.rbTipoBusquedaPersona.TabStop = true;
+            this.rbTipoBusquedaPersona.Text = "Persona";
+            this.rbTipoBusquedaPersona.UseVisualStyleBackColor = true;
+            this.rbTipoBusquedaPersona.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label4
             // 
@@ -491,15 +491,15 @@
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btneditar);
-            this.Controls.Add(this.btnañadir);
+            this.Controls.Add(this.btnnuevo);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDatos);
             this.Name = "TablaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.SeleecionarCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -513,7 +513,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtapellido;
         private System.Windows.Forms.TextBox txtnombre;
@@ -537,7 +537,7 @@
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btneditar;
-        private System.Windows.Forms.Button btnañadir;
+        private System.Windows.Forms.Button btnnuevo;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.TextBox txtdireccion;
         private System.Windows.Forms.Label ldireccion;
@@ -549,8 +549,8 @@
         private System.Windows.Forms.DateTimePicker dtnacimiento;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbTipoBusquedaEmpresa;
+        private System.Windows.Forms.RadioButton rbTipoBusquedaPersona;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label LdniB;
         private System.Windows.Forms.Label label5;

@@ -1,0 +1,1 @@
+﻿--mapeo los objeto usando entityframework y usar como referencia en la cap de datos y capa de negocio

@@ -3,14 +3,14 @@ using Objetos;
 using System;
 using System.Windows.Forms;
 using static Objetos.Empleado;
-
+using Formularios.Utilitario;
 namespace sistema_de_viajes
 {
     public partial class Iniciarsecion : Form
     {
         private ModeloEmpleado me = new ModeloEmpleado();
         private Usuario u = new Usuario();
-
+        private Mensaje _estadoMensaje;
         public Iniciarsecion()
         {
             InitializeComponent();
@@ -22,14 +22,15 @@ namespace sistema_de_viajes
             {
                 TablaEmpleado te = new TablaEmpleado();
                 te.Show();
-                MessageBox.Show("Bienvenido, registre su cuenta primero para crear su usuario e iniciar seccion");
+                Util.MostrarMensajeInformativo("Bienvenido, registre su cuenta primero para crear su usuario e iniciar seccion");
+                //MessageBox.Show("Bienvenido, registre su cuenta primero para crear su usuario e iniciar seccion");
             }
         }
 
         private void leer()
         {
-            u.usuario = txtusuario.Text;
-            u.contraseña = txtcontraseña.Text;
+            u.nombreusuario = txtusuario.Text;
+            u.contrasena = txtcontrasena.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,12 +46,36 @@ namespace sistema_de_viajes
                 }
                 else
                 {
-                    MessageBox.Show("Error en la contraseña");
+                    //MessageBox.Show("Error en la contraseña");
+                    Util.MostrarMensajeInformativo("Error en la contraseña");
                 }
             }
             else
             {
-                MessageBox.Show("Error en el usuario");
+                //MessageBox.Show("Error en el usuario");
+                Util.MostrarMensajeError("Error en el usuario");
+                //Util.MostrarMensajeInformativo("Error en el usuario");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtusuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                txtcontrasena.Focus();
+            }
+        }
+
+        private void txtcontrasena_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnIngresar.Focus();
             }
         }
     }

@@ -39,7 +39,7 @@ namespace Objetos
                     Cargo cargos = new Cargo();
                     {
                         cargos.ID = Convert.ToInt32(reader["ID"]);
-                        cargos.cargo = reader["Cargo"].ToString();
+                        cargos.nombrecargo = reader["Cargo"].ToString();
                         cargos.descripcion = reader["Descripcion"].ToString();
                     };
                     // Se añade el objeto Cargo a la lista de resultados.
@@ -76,7 +76,7 @@ namespace Objetos
                             Cargo cargo = new Cargo();
                             {
                                 cargo.ID = Convert.ToInt32(reader["ID"]);
-                                cargo.cargo = reader["Cargo"].ToString();
+                                cargo.nombrecargo = reader["Nombre"].ToString();
                                 cargo.descripcion = reader["Descripcion"].ToString();
                             };
                             // Se añade el objeto Cargo a la lista de resultados.

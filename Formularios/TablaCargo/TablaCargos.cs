@@ -64,7 +64,7 @@ namespace sistema_de_viajes
                 List<Cargo> resultadosBusqueda = TodosLosCargos
                     .Where(l =>
                         (id == 0 || l.ID == id) &&
-                        (string.IsNullOrEmpty(cargo) || l.cargo.IndexOf(cargo, StringComparison.OrdinalIgnoreCase) >= 0))
+                        (string.IsNullOrEmpty(cargo) || l.nombrecargo.IndexOf(cargo, StringComparison.OrdinalIgnoreCase) >= 0))
                     .ToList();
 
                 // Actualiza el DataGridView con los resultados de la búsqueda.
@@ -190,7 +190,7 @@ namespace sistema_de_viajes
                 if (cargo != null)
                 {
                     // Rellena los campos de texto con la información del Cargo seleccionado.
-                    txtnombre.Text = cargo.cargo;
+                    txtnombre.Text = cargo.nombrecargo;
                     txtDescripcion.Text = cargo.descripcion;
 
                     // Habilita los campos de texto para la edición.
@@ -245,7 +245,7 @@ namespace sistema_de_viajes
         // Método para obtener datos de los campos de texto y asignarlos a la instancia de Cargo.
         private void datos()
         {
-            c.cargo = txtnombre.Text;
+            c.nombrecargo = txtnombre.Text;
             c.descripcion = txtDescripcion.Text;
         }
 

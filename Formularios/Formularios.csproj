@@ -114,11 +114,11 @@
     <Compile Include="TablaCliente\TablaCliente.designer.cs">
       <DependentUpon>TablaCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="TablaEmpleado\TablaEmpleado.cs">
+    <Compile Include="TablaEmpleado\frmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TablaEmpleado\TablaEmpleado.designer.cs">
-      <DependentUpon>TablaEmpleado.cs</DependentUpon>
+    <Compile Include="TablaEmpleado\frmEmpleado.designer.cs">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="TablaLugar.cs">
       <SubType>Form</SubType>
@@ -144,6 +144,8 @@
     <Compile Include="TablaRuta.Designer.cs">
       <DependentUpon>TablaRuta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilitario\Tipo.cs" />
+    <Compile Include="Utilitario\Util.cs" />
     <EmbeddedResource Include="BuscarBoletos\Buscarboletos.resx">
       <DependentUpon>Buscarboletos.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,8 +188,8 @@
     <EmbeddedResource Include="TablaCliente\TablaCliente.resx">
       <DependentUpon>TablaCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TablaEmpleado\TablaEmpleado.resx">
-      <DependentUpon>TablaEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="TablaEmpleado\frmEmpleado.resx">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TablaLugar.resx">
       <DependentUpon>TablaLugar.cs</DependentUpon>

@@ -40,3 +40,9 @@ C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\obj\Debug\O
 C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\obj\Debug\Objetos.csproj.CoreCompileInputs.cache
 C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\obj\Debug\Objetos.dll
 C:\Users\ivan\Downloads\sistema viajes\SistemaViajesC-master\Objetos\obj\Debug\Objetos.pdb
+D:\Proyectos Git\SistemaViajes\Objetos\bin\Debug\Objetos.dll
+D:\Proyectos Git\SistemaViajes\Objetos\bin\Debug\Objetos.pdb
+D:\Proyectos Git\SistemaViajes\Objetos\obj\Debug\Objetos.csprojAssemblyReference.cache
+D:\Proyectos Git\SistemaViajes\Objetos\obj\Debug\Objetos.csproj.CoreCompileInputs.cache
+D:\Proyectos Git\SistemaViajes\Objetos\obj\Debug\Objetos.dll
+D:\Proyectos Git\SistemaViajes\Objetos\obj\Debug\Objetos.pdb

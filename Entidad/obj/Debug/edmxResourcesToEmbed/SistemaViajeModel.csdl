@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sistemaviajesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Boletos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPasajero" Type="Int32" Nullable="false" />
+    <Property Name="IDServicio" Type="Int32" Nullable="false" />
+    <Property Name="IDComprobante" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Single" Nullable="false" />
+    <NavigationProperty Name="Comprobante" Relationship="Self.FKBoletos402866" FromRole="Boletos" ToRole="Comprobante" />
+    <NavigationProperty Name="pasajero" Relationship="Self.FKBoletos575112" FromRole="Boletos" ToRole="pasajero" />
+    <NavigationProperty Name="Servicio" Relationship="Self.FKBoletos707533" FromRole="Boletos" ToRole="Servicio" />
+  </EntityType>
+  <EntityType Name="Buses">
+    <Key>
+      <PropertyRef Name="Placa" />
+    </Key>
+    <Property Name="Placa" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IDModelo" Type="Int32" Nullable="false" />
+    <Property Name="Lugar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Disponible" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ModeloBus" Relationship="Self.FKBuses525865" FromRole="Buses" ToRole="ModeloBus" />
+    <NavigationProperty Name="Cronograma_viajes" Relationship="Self.FKCronograma54920" FromRole="Buses" ToRole="Cronograma_viajes" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cargo1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FKEmpleado374290" FromRole="Cargo" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DNI" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="Ruc" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Celular" Type="Int32" Nullable="false" />
+    <Property Name="nacimiento" Type="DateTime" Precision="0" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Comprobante" Relationship="Self.FKComprobant709029" FromRole="Cliente" ToRole="Comprobante" />
+    <NavigationProperty Name="Recervaciones" Relationship="Self.FKRecervacio28818" FromRole="Cliente" ToRole="Recervaciones" />
+  </EntityType>
+  <EntityType Name="Comprobante">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDCliente" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Precio_total" Type="Single" Nullable="false" />
+    <Property Name="Costo_igv" Type="Single" Nullable="false" />
+    <Property Name="Precio" Type="Single" Nullable="false" />
+    <Property Name="TipoComprobante" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Boletos" Relationship="Self.FKBoletos402866" FromRole="Comprobante" ToRole="Boletos" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FKComprobant709029" FromRole="Comprobante" ToRole="Cliente" />
+  </EntityType>
+  <EntityType Name="Cronograma_viajes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Placa" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="IDRuta" Type="Int32" Nullable="false" />
+    <Property Name="IDusuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha_salida" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Buses" Relationship="Self.FKCronograma54920" FromRole="Cronograma_viajes" ToRole="Buses" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FKCronograma605734" FromRole="Cronograma_viajes" ToRole="Usuario" />
+    <NavigationProperty Name="Ruta" Relationship="Self.FKCronograma852108" FromRole="Cronograma_viajes" ToRole="Ruta" />
+    <NavigationProperty Name="Recervaciones" Relationship="Self.FKRecervacio330165" FromRole="Cronograma_viajes" ToRole="Recervaciones" />
+    <NavigationProperty Name="Servicio" Relationship="Self.FKServicio502048" FromRole="Cronograma_viajes" ToRole="Servicio" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDCargo" Type="Int32" />
+    <Property Name="Dni" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SexoEmpl" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Cargo" Relationship="Self.FKEmpleado374290" FromRole="Empleado" ToRole="Cargo" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FKUsuario6883" FromRole="Empleado" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Lugar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Terminal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Ruta" Relationship="Self.FKRuta395954" FromRole="Lugar" ToRole="Ruta" />
+    <NavigationProperty Name="Ruta1" Relationship="Self.FKRuta785889" FromRole="Lugar" ToRole="Ruta" />
+  </EntityType>
+  <EntityType Name="ModeloBus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Modelo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Asientos" Type="Int32" Nullable="false" />
+    <Property Name="Tamaño" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pisos" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Buses" Relationship="Self.FKBuses525865" FromRole="ModeloBus" ToRole="Buses" />
+  </EntityType>
+  <EntityType Name="pasajero">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Boletos" Relationship="Self.FKBoletos575112" FromRole="pasajero" ToRole="Boletos" />
+  </EntityType>
+  <EntityType Name="Recervaciones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDCronograma" Type="Int32" Nullable="false" />
+    <Property Name="IDCliente" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_limite" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_recerva" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FKRecervacio28818" FromRole="Recervaciones" ToRole="Cliente" />
+    <NavigationProperty Name="Cronograma_viajes" Relationship="Self.FKRecervacio330165" FromRole="Recervaciones" ToRole="Cronograma_viajes" />
+  </EntityType>
+  <EntityType Name="Ruta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDOrigen" Type="Int32" Nullable="false" />
+    <Property Name="IDDestino" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Demora" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Cronograma_viajes" Relationship="Self.FKCronograma852108" FromRole="Ruta" ToRole="Cronograma_viajes" />
+    <NavigationProperty Name="Lugar" Relationship="Self.FKRuta395954" FromRole="Ruta" ToRole="Lugar" />
+    <NavigationProperty Name="Lugar1" Relationship="Self.FKRuta785889" FromRole="Ruta" ToRole="Lugar" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDCronograma" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Precio_piso1" Type="Single" Nullable="false" />
+    <Property Name="Precio_piso2" Type="Single" />
+    <NavigationProperty Name="Boletos" Relationship="Self.FKBoletos707533" FromRole="Servicio" ToRole="Boletos" />
+    <NavigationProperty Name="Cronograma_viajes" Relationship="Self.FKServicio502048" FromRole="Servicio" ToRole="Cronograma_viajes" />
+  </EntityType>
+  <EntityType Name="Turnos_definidos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Usuario1" />
+    </Key>
+    <Property Name="Usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="Contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tipocuenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cronograma_viajes" Relationship="Self.FKCronograma605734" FromRole="Usuario" ToRole="Cronograma_viajes" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FKUsuario6883" FromRole="Usuario" ToRole="Empleado" />
+  </EntityType>
+  <Association Name="FKBoletos402866">
+    <End Role="Comprobante" Type="Self.Comprobante" Multiplicity="1" />
+    <End Role="Boletos" Type="Self.Boletos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comprobante">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Boletos">
+        <PropertyRef Name="IDComprobante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKBoletos575112">
+    <End Role="pasajero" Type="Self.pasajero" Multiplicity="1" />
+    <End Role="Boletos" Type="Self.Boletos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pasajero">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Boletos">
+        <PropertyRef Name="IDPasajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKBoletos707533">
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="1" />
+    <End Role="Boletos" Type="Self.Boletos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicio">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Boletos">
+        <PropertyRef Name="IDServicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKBuses525865">
+    <End Role="ModeloBus" Type="Self.ModeloBus" Multiplicity="1" />
+    <End Role="Buses" Type="Self.Buses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModeloBus">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Buses">
+        <PropertyRef Name="IDModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKCronograma54920">
+    <End Role="Buses" Type="Self.Buses" Multiplicity="1" />
+    <End Role="Cronograma_viajes" Type="Self.Cronograma_viajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Buses">
+        <PropertyRef Name="Placa" />
+      </Principal>
+      <Dependent Role="Cronograma_viajes">
+        <PropertyRef Name="Placa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKEmpleado374290">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="0..1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="IDCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKComprobant709029">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Comprobante" Type="Self.Comprobante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comprobante">
+        <PropertyRef Name="IDCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKRecervacio28818">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Recervaciones" Type="Self.Recervaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Recervaciones">
+        <PropertyRef Name="IDCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKCronograma605734">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Cronograma_viajes" Type="Self.Cronograma_viajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Usuario1" />
+      </Principal>
+      <Dependent Role="Cronograma_viajes">
+        <PropertyRef Name="IDusuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKCronograma852108">
+    <End Role="Ruta" Type="Self.Ruta" Multiplicity="1" />
+    <End Role="Cronograma_viajes" Type="Self.Cronograma_viajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ruta">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cronograma_viajes">
+        <PropertyRef Name="IDRuta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKRecervacio330165">
+    <End Role="Cronograma_viajes" Type="Self.Cronograma_viajes" Multiplicity="1" />
+    <End Role="Recervaciones" Type="Self.Recervaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cronograma_viajes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Recervaciones">
+        <PropertyRef Name="IDCronograma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKServicio502048">
+    <End Role="Cronograma_viajes" Type="Self.Cronograma_viajes" Multiplicity="1" />
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cronograma_viajes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Servicio">
+        <PropertyRef Name="IDCronograma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKUsuario6883">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IDEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKRuta395954">
+    <End Role="Lugar" Type="Self.Lugar" Multiplicity="1" />
+    <End Role="Ruta" Type="Self.Ruta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lugar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ruta">
+        <PropertyRef Name="IDOrigen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKRuta785889">
+    <End Role="Lugar" Type="Self.Lugar" Multiplicity="1" />
+    <End Role="Ruta" Type="Self.Ruta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lugar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ruta">
+        <PropertyRef Name="IDDestino" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sistemaviajesContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Boletos" EntityType="Self.Boletos" />
+    <EntitySet Name="Buses" EntityType="Self.Buses" />
+    <EntitySet Name="Cargo" EntityType="Self.Cargo" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Comprobante" EntityType="Self.Comprobante" />
+    <EntitySet Name="Cronograma_viajes" EntityType="Self.Cronograma_viajes" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+    <EntitySet Name="Lugar" EntityType="Self.Lugar" />
+    <EntitySet Name="ModeloBus" EntityType="Self.ModeloBus" />
+    <EntitySet Name="pasajero" EntityType="Self.pasajero" />
+    <EntitySet Name="Recervaciones" EntityType="Self.Recervaciones" />
+    <EntitySet Name="Ruta" EntityType="Self.Ruta" />
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" />
+    <EntitySet Name="Turnos_definidos" EntityType="Self.Turnos_definidos" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FKBoletos402866" Association="Self.FKBoletos402866">
+      <End Role="Comprobante" EntitySet="Comprobante" />
+      <End Role="Boletos" EntitySet="Boletos" />
+    </AssociationSet>
+    <AssociationSet Name="FKBoletos575112" Association="Self.FKBoletos575112">
+      <End Role="pasajero" EntitySet="pasajero" />
+      <End Role="Boletos" EntitySet="Boletos" />
+    </AssociationSet>
+    <AssociationSet Name="FKBoletos707533" Association="Self.FKBoletos707533">
+      <End Role="Servicio" EntitySet="Servicio" />
+      <End Role="Boletos" EntitySet="Boletos" />
+    </AssociationSet>
+    <AssociationSet Name="FKBuses525865" Association="Self.FKBuses525865">
+      <End Role="ModeloBus" EntitySet="ModeloBus" />
+      <End Role="Buses" EntitySet="Buses" />
+    </AssociationSet>
+    <AssociationSet Name="FKCronograma54920" Association="Self.FKCronograma54920">
+      <End Role="Buses" EntitySet="Buses" />
+      <End Role="Cronograma_viajes" EntitySet="Cronograma_viajes" />
+    </AssociationSet>
+    <AssociationSet Name="FKEmpleado374290" Association="Self.FKEmpleado374290">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FKComprobant709029" Association="Self.FKComprobant709029">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Comprobante" EntitySet="Comprobante" />
+    </AssociationSet>
+    <AssociationSet Name="FKRecervacio28818" Association="Self.FKRecervacio28818">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Recervaciones" EntitySet="Recervaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FKCronograma605734" Association="Self.FKCronograma605734">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cronograma_viajes" EntitySet="Cronograma_viajes" />
+    </AssociationSet>
+    <AssociationSet Name="FKCronograma852108" Association="Self.FKCronograma852108">
+      <End Role="Ruta" EntitySet="Ruta" />
+      <End Role="Cronograma_viajes" EntitySet="Cronograma_viajes" />
+    </AssociationSet>
+    <AssociationSet Name="FKRecervacio330165" Association="Self.FKRecervacio330165">
+      <End Role="Cronograma_viajes" EntitySet="Cronograma_viajes" />
+      <End Role="Recervaciones" EntitySet="Recervaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FKServicio502048" Association="Self.FKServicio502048">
+      <End Role="Cronograma_viajes" EntitySet="Cronograma_viajes" />
+      <End Role="Servicio" EntitySet="Servicio" />
+    </AssociationSet>
+    <AssociationSet Name="FKUsuario6883" Association="Self.FKUsuario6883">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FKRuta395954" Association="Self.FKRuta395954">
+      <End Role="Lugar" EntitySet="Lugar" />
+      <End Role="Ruta" EntitySet="Ruta" />
+    </AssociationSet>
+    <AssociationSet Name="FKRuta785889" Association="Self.FKRuta785889">
+      <End Role="Lugar" EntitySet="Lugar" />
+      <End Role="Ruta" EntitySet="Ruta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

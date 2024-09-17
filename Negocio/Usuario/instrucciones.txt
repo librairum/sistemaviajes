@@ -1,0 +1,24 @@
+﻿// Capa de Negocio (Interfaces)
+public interface IProductoRepository
+{
+    Producto ObtenerProductoPorId(int id);
+    void GuardarProducto(Producto producto);
+}
+
+// Capa de Negocio (Servicio)
+public class ProductoService
+{
+    private readonly IProductoRepository _productoRepository;
+
+    public ProductoService(IProductoRepository productoRepository)   
+
+    {
+        _productoRepository = productoRepository;
+    }
+
+    public   
+ Producto ObtenerProducto(int id)
+    {
+        return _productoRepository.ObtenerProductoPorId(id);
+    }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1f9cd7aa200445bb82fccb1ab46b80cf" Name="Diagram1">
+        <EntityTypeShape EntityType="sistemaviajesModel.Boletos" Width="1.5" PointX="9.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Buses" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Cargo" Width="1.5" PointX="1.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Cliente" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Comprobante" Width="1.5" PointX="7.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Cronograma_viajes" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Empleado" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Lugar" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.ModeloBus" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.pasajero" Width="1.5" PointX="7.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Recervaciones" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Ruta" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Servicio" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Turnos_definidos" Width="1.5" PointX="2.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistemaviajesModel.Usuario" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="sistemaviajesModel.FKBoletos402866" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKBoletos575112" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKBoletos707533" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKBuses525865" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKCronograma54920" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKEmpleado374290" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKComprobant709029" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKRecervacio28818" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKCronograma605734" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKCronograma852108" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKRecervacio330165" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKServicio502048" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKUsuario6883" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKRuta395954" ManuallyRouted="false" />
+        <AssociationConnector Association="sistemaviajesModel.FKRuta785889" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

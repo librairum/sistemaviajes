@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Objetos.Empleado;
-
+using Formularios.Utilitario;
 namespace sistema_de_viajes
 {
     public partial class TablaCliente : Form
@@ -32,8 +32,8 @@ namespace sistema_de_viajes
         private void SeleecionarCliente_Load(object sender, EventArgs e)
         {
             clp = mc.MostrarClientePersona();
-            dataGridView1.DataSource = clp;
-            toolTip1.SetToolTip(btnañadir, "Añadir");
+            dgvDatos.DataSource = clp;
+            toolTip1.SetToolTip(btnnuevo, "Añadir");
             toolTip1.SetToolTip(btneliminar, "Eliminar");
             toolTip1.SetToolTip(btncancelar, "Cancelar");
             toolTip1.SetToolTip(btnguardar, "Guardar");
@@ -47,7 +47,7 @@ namespace sistema_de_viajes
             txtruc.Visible = false;
             txtdireccion.Visible = false;
             rdpersona.Checked = true;
-            radioButton1.Checked = true;
+            rbTipoBusquedaPersona.Checked = true;
 
         }
         private void limpiar()
@@ -179,38 +179,50 @@ namespace sistema_de_viajes
         {
             btneditar.Enabled = false;
             btnguardar.Enabled = false;
-            btnañadir.Enabled = true;
+            btnnuevo.Enabled = true;
             btneliminar.Enabled = false;
-            dataGridView1.Enabled = true;
+            dgvDatos.Enabled = true;
         }
+        private void ActivarBotonesMantenimiento(bool activar)
+        {
+            btnnuevo.Enabled = activar;
+            btneditar.Enabled = activar;
+            btneliminar.Enabled = activar;
+            btnguardar.Enabled = !activar;
+            btncancelar.Enabled = !activar;
 
+        }
         private void btnañadir_Click(object sender, EventArgs e)
         {
             activartxt();
             limpiar();
             estado = "g";
-            btnguardar.Enabled = true;
+            
             activartxt();
-            dataGridView1.Enabled = false;
-            btneditar.Enabled = false;
-            btneliminar.Enabled = false;
+
+            dgvDatos.Enabled = false;
+            ActivarBotonesMantenimiento(true);
+            //btnguardar.Enabled = true;
+            //btneditar.Enabled = false;
+            //btneliminar.Enabled = false;
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
-            btneditar.Enabled = false;
-            btnguardar.Enabled = false;
-            btnañadir.Enabled = true;
-            btneliminar.Enabled = false;
+            //btneditar.Enabled = false;
+            //btnguardar.Enabled = false;
+            //btnnuevo.Enabled = true;
+            //btneliminar.Enabled = false;
+            ActivarBotonesMantenimiento(true);
             limpiar();
             desactivartxt();
-            dataGridView1.Enabled = true;
+            dgvDatos.Enabled = true;
 
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton1.Checked)
+            if(rbTipoBusquedaPersona.Checked)
             {
                 LdniB.Visible = true;
                 txtdniB.Visible = true;
@@ -220,13 +232,13 @@ namespace sistema_de_viajes
                 txtdniB.Text = "";
                 txtrucB.Text = "";
                 clp = mc.MostrarClientePersona();
-                dataGridView1.DataSource = clp;
+                dgvDatos.DataSource = clp;
             }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton2.Checked)
+            if (rbTipoBusquedaEmpresa.Checked)
             {
                 LdniB.Visible = false;
                 txtdniB.Visible = false;
@@ -236,7 +248,7 @@ namespace sistema_de_viajes
                 txtdniB.Text = "";
                 txtrucB.Text = "";
                 cle = mc.MostrarClienteEmpresa();
-                dataGridView1.DataSource = cle;
+                dgvDatos.DataSource = cle;
             }
         }
 
@@ -265,13 +277,13 @@ namespace sistema_de_viajes
                         mc.editarCliente(c);
                         limpiar();
                         desactivartxt();
-                        if (radioButton1.Checked) { 
+                        if (rbTipoBusquedaPersona.Checked) { 
                             clp = mc.MostrarClientePersona(); 
-                            dataGridView1.DataSource = clp;
+                            dgvDatos.DataSource = clp;
                         }
-                        if (radioButton2.Checked) { 
+                        if (rbTipoBusquedaEmpresa.Checked) { 
                             cle = mc.MostrarClienteEmpresa();
-                            dataGridView1.DataSource = cle;
+                            dgvDatos.DataSource = cle;
                         }
                         cancelar();
                         MessageBox.Show("se edito");
@@ -289,7 +301,7 @@ namespace sistema_de_viajes
                             limpiar();
                             desactivartxt();
                             clp = mc.MostrarClientePersona();
-                            dataGridView1.DataSource = clp;
+                            dgvDatos.DataSource = clp;
                             cancelar();
                             MessageBox.Show("se guardo");
                         }
@@ -304,7 +316,7 @@ namespace sistema_de_viajes
                             limpiar();
                             desactivartxt();
                             cle = mc.MostrarClienteEmpresa();
-                            dataGridView1.DataSource = cle;
+                            dgvDatos.DataSource = cle;
                             cancelar();
                             MessageBox.Show("se guardo");
                         }
@@ -315,11 +327,16 @@ namespace sistema_de_viajes
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            c.ID = id;
-            SqlDataReader dr = mc.listarClienteID(id);
+            //Util.ObtenerNumeroCeldaActual(dgvDatos, "")
+            //seleccioanr el campo de la cuadricula de datos , campo "ID"
+
+            //int id = (int)dgvDatos.CurrentRow.Cells["ID"].Value;
+            c.ID = Util.ObtenerNumeroCeldaActual(dgvDatos, "ID");
+            
+            SqlDataReader dr = mc.listarClienteID(c.ID);
             if (dr.Read())
             {
+                
                 txtnombre.Text = dr["Nombres"].ToString();
                 txtapellido.Text = dr["Apellido"].ToString();
                 txtruc.Text = dr["Ruc"].ToString();
@@ -327,6 +344,7 @@ namespace sistema_de_viajes
                 txtdireccion.Text = dr["Direccion"].ToString();
                 txtcelular.Text = dr["Celular"].ToString();
                 txtcorreo.Text = dr["Correo"].ToString();
+                
                 if (dr["Tipo"].ToString().Equals(rdpersona.Text))
                 {
                     rdpersona.Checked = true;
@@ -347,31 +365,31 @@ namespace sistema_de_viajes
         private void btneliminar_Click(object sender, EventArgs e)
         {
             mc.eliminarcliente(c.ID);
-            if (rdpersona.Checked) { dataGridView1.DataSource = mc.MostrarClientePersona(); }
-            if (rdempresa.Checked) { dataGridView1.DataSource = mc.MostrarClienteEmpresa(); }
+            if (rdpersona.Checked) { dgvDatos.DataSource = mc.MostrarClientePersona(); }
+            if (rdempresa.Checked) { dgvDatos.DataSource = mc.MostrarClienteEmpresa(); }
             limpiar();
             desactivartxt();
-            dataGridView1.Enabled = true;
+            dgvDatos.Enabled = true;
             btneditar.Enabled = false;
             btnguardar.Enabled = false;
-            btnañadir.Enabled = true;
+            btnnuevo.Enabled = true;
             MessageBox.Show("Se elimino con exito");
         }
 
         private void btneditar_Click(object sender, EventArgs e)
         {
-            dataGridView1.Enabled = false;
+            dgvDatos.Enabled = false;
             estado = "e";
             btnguardar.Enabled = true;
             activartxt();
-            btnañadir.Enabled = false;
+            btnnuevo.Enabled = false;
         }
 
         private void btBuscar_Click(object sender, EventArgs e)
         {
             if(txtnombrecliente.Text != "" || txtdniB.Text != "" || txtrucB.Text != "")
             {
-                if(radioButton1.Checked)
+                if(rbTipoBusquedaPersona.Checked)
                 {
                     string nombreCliente = txtnombrecliente.Text;
                     string Dni = txtdniB.Text;
@@ -380,9 +398,9 @@ namespace sistema_de_viajes
                             (string.IsNullOrEmpty(nombreCliente) || c.Nombres.IndexOf(nombreCliente, StringComparison.OrdinalIgnoreCase) >= 0) &&
                             (string.IsNullOrEmpty(Dni) || c.DNI.IndexOf(Dni, StringComparison.OrdinalIgnoreCase) >= 0))
                         .ToList();
-                    dataGridView1.DataSource = resultadosBusqueda;
+                    dgvDatos.DataSource = resultadosBusqueda;
                 }
-                if (radioButton2.Checked)
+                if (rbTipoBusquedaEmpresa.Checked)
                 {
                     string nombreCliente = txtnombrecliente.Text;
                     string ruc = txtrucB.Text;
@@ -391,11 +409,11 @@ namespace sistema_de_viajes
                             (string.IsNullOrEmpty(nombreCliente) || c.Nombres.IndexOf(nombreCliente, StringComparison.OrdinalIgnoreCase) >= 0) &&
                             (string.IsNullOrEmpty(ruc) || c.Ruc.IndexOf(ruc, StringComparison.OrdinalIgnoreCase) >= 0))
                         .ToList();
-                    dataGridView1.DataSource = resultadosBusqueda;
+                    dgvDatos.DataSource = resultadosBusqueda;
                 }
             }else {
-                if (radioButton1.Checked) { dataGridView1.DataSource = mc.MostrarClientePersona(); }
-                if (radioButton2.Checked) { dataGridView1.DataSource = mc.MostrarClienteEmpresa(); }
+                if (rbTipoBusquedaPersona.Checked) { dgvDatos.DataSource = mc.MostrarClientePersona(); }
+                if (rbTipoBusquedaEmpresa.Checked) { dgvDatos.DataSource = mc.MostrarClienteEmpresa(); }
             }
         }
     }

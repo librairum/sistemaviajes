@@ -1,0 +1,15 @@
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\Datos.dll.config
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\Datos.dll
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\Datos.pdb
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\Entidad.dll
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\EntityFramework.dll
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\EntityFramework.SqlServer.dll
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\Entidad.pdb
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\Entidad.dll.config
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\EntityFramework.xml
+D:\Proyectos Git\SistemaViajes\Datos\bin\Debug\EntityFramework.SqlServer.xml
+D:\Proyectos Git\SistemaViajes\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+D:\Proyectos Git\SistemaViajes\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+D:\Proyectos Git\SistemaViajes\Datos\obj\Debug\Datos.csproj.CopyComplete
+D:\Proyectos Git\SistemaViajes\Datos\obj\Debug\Datos.dll
+D:\Proyectos Git\SistemaViajes\Datos\obj\Debug\Datos.pdb
